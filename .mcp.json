@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "turso": {
+      "command": "npx",
+      "args": ["-y", "mcp-turso-cloud"],
+      "env": {
+        "TURSO_API_TOKEN": "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJ5MzI2MVBHQ0VmQ01ENWJma3JMdlN3In0.bAC_LK6zjbJKLrt0rLNaIswxJKPWpfMOxFqB8_w4u3o6Ny1_HQ6wLv_tUUKb6Pn7Iz9_WoAk0YNCpCAnzFszDg",
+        "TURSO_ORGANIZATION": "ichaiwizm"
+      }
+    }
+  }
+}
