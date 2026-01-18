@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base neutrals */
+  --color-void: #050508;
+  --color-night: #0c0c12;
+  --color-dark: #141420;
+  --color-surface: #1c1c2a;
+  --color-elevated: #252536;
+  --color-muted: #3a3a50;
+  --color-subtle: #6b6b85;
+  --color-text: #e8e8f0;
+  --color-bright: #ffffff;
+
+  /* Accent colors */
+  --color-accent: #6366f1;
+  --color-accent-dim: #4f46e5;
+  --color-accent-bright: #818cf8;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Divine name palette */
+  --color-yhwh: #60a5fa;
+  --color-elohim: #fbbf24;
+  --color-shaddai: #a78bfa;
+  --color-elyon: #34d399;
+  --color-adonai: #fb7185;
+  --color-el: #fb923c;
+
+  /* Fonts */
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-hebrew: "Frank Ruhl Libre", "Noto Serif Hebrew", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Cinzel:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+html { background: var(--color-void); color: var(--color-text); }
+body { font-family: var(--font-sans); margin: 0; min-height: 100vh; line-height: 1.6; }
+
+.hebrew { font-family: var(--font-hebrew); direction: rtl; }
+.mono { font-family: var(--font-mono); }
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-night); }
+::-webkit-scrollbar-thumb { background: var(--color-muted); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-subtle); }
+
+/* Focus styles */
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* Gematria Lab specific styles */
+.font-cinzel { font-family: "Cinzel", serif; }
+
+@keyframes letter-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    opacity: 0.8;
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    opacity: 1;
+  }
+}
+.animate-letter-glow { animation: letter-glow 2s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+
+@keyframes dial-tick {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-dial-tick { animation: dial-tick 0.3s ease-out; }
+
+/* Geometric grid pattern for gematria backgrounds */
+.gematria-grid {
+  background-image:
+    linear-gradient(rgba(212, 168, 83, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 168, 83, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

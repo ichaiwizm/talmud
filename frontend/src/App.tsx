@@ -1,0 +1,36 @@
+import { useState, useEffect } from 'react'
+import Hub from './components/Hub'
+import DivineObservatory from './components/interfaces/DivineObservatory'
+import Constellation from './components/interfaces/Constellation'
+import LivingScroll from './components/interfaces/LivingScroll'
+import VoiceChamber from './components/interfaces/VoiceChamber'
+import GematriaLab from './components/interfaces/GematriaLab'
+
+type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab'
+
+interface Stats {
+  verses: number
+  books: number
+  names: number
+  divine_names: number
+}
+
+export default function App() {
+  const [view, setView] = useState<View>('hub')
+  const [stats, setStats] = useState<Stats | null>(null)
+
+  useEffect(() => {
+    fetch('/api/stats').then(r => r.json()).then(setStats).catch(console.error)
+  }, [])
+
+  return (
+    <div className="min-h-screen">
+      {view === 'hub' && <Hub stats={stats} onSelect={(id) => setView(id as View)} />}
+      {view === 'divine-observatory' && <DivineObservatory onBack={() => setView('hub')} />}
+      {view === 'constellation' && <Constellation onBack={() => setView('hub')} />}
+      {view === 'living-scroll' && <LivingScroll onBack={() => setView('hub')} />}
+      {view === 'voice-chamber' && <VoiceChamber onBack={() => setView('hub')} />}
+      {view === 'gematria-lab' && <GematriaLab onBack={() => setView('hub')} />}
+    </div>
+  )
+}
