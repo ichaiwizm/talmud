@@ -84,8 +84,8 @@ def get_interfaces():
             "name": "Shoresh Navigator",
             "description": "Exploration des racines hébraïques",
             "icon": "git-branch",
-            "color": "#EC4899",
-            "ready": False,
+            "color": "#22C55E",
+            "ready": True,
         },
         {
             "id": "pattern-forge",

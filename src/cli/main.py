@@ -14,6 +14,7 @@ from src.cli.stats import stats_commands
 from src.cli.search import search_commands
 from src.cli.relations import relation_commands
 from src.cli.gematria import gematria_commands
+from src.cli.enrichment import enrichment_commands
 
 logging.basicConfig(
     level=logging.INFO,
@@ -192,6 +193,9 @@ for cmd in relation_commands:
     cli.add_command(cmd)
 
 for cmd in gematria_commands:
+    cli.add_command(cmd)
+
+for cmd in enrichment_commands:
     cli.add_command(cmd)
 
 
