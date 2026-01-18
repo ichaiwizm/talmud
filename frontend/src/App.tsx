@@ -8,8 +8,9 @@ import GematriaLab from './components/interfaces/GematriaLab'
 import EmotionalTopology from './components/interfaces/EmotionalTopology'
 import JourneyAtlas from './components/interfaces/JourneyAtlas'
 import ShoreshNavigator from './components/interfaces/ShoreshNavigator'
+import PatternForge from './components/interfaces/PatternForge'
 
-type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology' | 'journey-atlas' | 'shoresh-navigator'
+type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology' | 'journey-atlas' | 'shoresh-navigator' | 'pattern-forge'
 
 interface Stats {
   verses: number
@@ -37,6 +38,7 @@ export default function App() {
       {view === 'emotional-topology' && <EmotionalTopology onBack={() => setView('hub')} />}
       {view === 'journey-atlas' && <JourneyAtlas onBack={() => setView('hub')} />}
       {view === 'shoresh-navigator' && <ShoreshNavigator onBack={() => setView('hub')} />}
+      {view === 'pattern-forge' && <PatternForge onBack={() => setView('hub')} />}
     </div>
   )
 }

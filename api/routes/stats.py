@@ -92,8 +92,8 @@ def get_interfaces():
             "name": "Pattern Forge",
             "description": "Structures littéraires",
             "icon": "layers",
-            "color": "#8B5CF6",
-            "ready": False,
+            "color": "#06B6D4",
+            "ready": True,
         },
         {
             "id": "covenant-architect",

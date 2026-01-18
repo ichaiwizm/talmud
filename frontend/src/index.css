@@ -243,3 +243,86 @@ html { scroll-behavior: smooth; }
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2322c55e' stroke-width='0.5' opacity='0.05'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2322c55e' stroke-width='0.5' opacity='0.05'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%2322c55e' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
   background-size: 100px 100px;
 }
+
+/* Pattern Forge specific styles */
+.blueprint-bg {
+  background: linear-gradient(180deg,
+    #0a1628 0%,
+    #0f1d32 50%,
+    #0a1628 100%
+  );
+}
+
+/* Blueprint grid pattern */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+@keyframes pattern-trace {
+  0% {
+    stroke-dashoffset: 500;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+.animate-pattern-trace {
+  stroke-dasharray: 500;
+  animation: pattern-trace 2s ease-out forwards;
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    transform: scale(1.05);
+  }
+}
+.animate-node-pulse { animation: node-pulse 2s ease-in-out infinite; }
+
+@keyframes connection-flow {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+.animate-connection-flow {
+  stroke-dasharray: 5 5;
+  animation: connection-flow 1s linear infinite;
+}
+
+@keyframes blueprint-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+.animate-blueprint-scan { animation: blueprint-scan 3s ease-in-out infinite; }
+
+/* Chiastic pattern visualization */
+.chiasmus-pattern {
+  background: linear-gradient(135deg,
+    rgba(6, 182, 212, 0.1) 0%,
+    transparent 50%,
+    rgba(6, 182, 212, 0.1) 100%
+  );
+}
+
+/* Structure diagram connector lines */
+.structure-connector {
+  stroke: #06b6d4;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
