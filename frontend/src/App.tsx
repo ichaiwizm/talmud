@@ -9,8 +9,9 @@ import EmotionalTopology from './components/interfaces/EmotionalTopology'
 import JourneyAtlas from './components/interfaces/JourneyAtlas'
 import ShoreshNavigator from './components/interfaces/ShoreshNavigator'
 import PatternForge from './components/interfaces/PatternForge'
+import CovenantArchitect from './components/interfaces/CovenantArchitect'
 
-type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology' | 'journey-atlas' | 'shoresh-navigator' | 'pattern-forge'
+type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology' | 'journey-atlas' | 'shoresh-navigator' | 'pattern-forge' | 'covenant-architect'
 
 interface Stats {
   verses: number
@@ -39,6 +40,7 @@ export default function App() {
       {view === 'journey-atlas' && <JourneyAtlas onBack={() => setView('hub')} />}
       {view === 'shoresh-navigator' && <ShoreshNavigator onBack={() => setView('hub')} />}
       {view === 'pattern-forge' && <PatternForge onBack={() => setView('hub')} />}
+      {view === 'covenant-architect' && <CovenantArchitect onBack={() => setView('hub')} />}
     </div>
   )
 }

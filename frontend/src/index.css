@@ -326,3 +326,86 @@ html { scroll-behavior: smooth; }
   fill: none;
   stroke-linecap: round;
 }
+
+/* Covenant Architect specific styles */
+.covenant-bg {
+  background: linear-gradient(180deg,
+    #1a1510 0%,
+    #252015 50%,
+    #1a1510 100%
+  );
+}
+
+/* Stone tablet texture pattern */
+.stone-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Temple pillar pattern */
+.pillar-pattern {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(212, 168, 83, 0.02) 0px,
+      rgba(212, 168, 83, 0.02) 2px,
+      transparent 2px,
+      transparent 60px
+    );
+}
+
+@keyframes covenant-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-covenant-reveal { animation: covenant-reveal 0.6s ease-out forwards; }
+
+@keyframes tablet-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 168, 83, 0.2), inset 0 0 30px rgba(212, 168, 83, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 168, 83, 0.3), inset 0 0 50px rgba(212, 168, 83, 0.1);
+  }
+}
+.animate-tablet-glow { animation: tablet-glow 3s ease-in-out infinite; }
+
+@keyframes pillar-rise {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+.animate-pillar-rise { animation: pillar-rise 1s ease-out forwards; }
+
+@keyframes seal-stamp {
+  0% { transform: scale(1.5) rotate(-10deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.animate-seal-stamp { animation: seal-stamp 0.4s ease-out forwards; }
+
+/* Covenant connection lines */
+.covenant-connector {
+  stroke: #d4a853;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Gold border for covenant cards */
+.covenant-border {
+  border: 2px solid rgba(212, 168, 83, 0.3);
+  box-shadow:
+    inset 0 0 20px rgba(212, 168, 83, 0.05),
+    0 0 10px rgba(212, 168, 83, 0.1);
+}

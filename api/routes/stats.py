@@ -100,8 +100,8 @@ def get_interfaces():
             "name": "Covenant Architect",
             "description": "Architecture des alliances",
             "icon": "building",
-            "color": "#0EA5E9",
-            "ready": False,
+            "color": "#D4A853",
+            "ready": True,
         },
         {
             "id": "gematria-lab",
