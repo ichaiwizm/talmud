@@ -76,8 +76,8 @@ def get_interfaces():
             "name": "Journey Atlas",
             "description": "Carte des voyages patriarcaux",
             "icon": "map",
-            "color": "#3B82F6",
-            "ready": False,
+            "color": "#D97706",
+            "ready": True,
         },
         {
             "id": "shoresh-navigator",

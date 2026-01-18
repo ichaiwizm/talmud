@@ -6,8 +6,9 @@ import LivingScroll from './components/interfaces/LivingScroll'
 import VoiceChamber from './components/interfaces/VoiceChamber'
 import GematriaLab from './components/interfaces/GematriaLab'
 import EmotionalTopology from './components/interfaces/EmotionalTopology'
+import JourneyAtlas from './components/interfaces/JourneyAtlas'
 
-type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology'
+type View = 'hub' | 'divine-observatory' | 'constellation' | 'living-scroll' | 'voice-chamber' | 'gematria-lab' | 'emotional-topology' | 'journey-atlas'
 
 interface Stats {
   verses: number
@@ -33,6 +34,7 @@ export default function App() {
       {view === 'voice-chamber' && <VoiceChamber onBack={() => setView('hub')} />}
       {view === 'gematria-lab' && <GematriaLab onBack={() => setView('hub')} />}
       {view === 'emotional-topology' && <EmotionalTopology onBack={() => setView('hub')} />}
+      {view === 'journey-atlas' && <JourneyAtlas onBack={() => setView('hub')} />}
     </div>
   )
 }
