@@ -58,10 +58,10 @@ def get_interfaces():
         {
             "id": "emotional-topology",
             "name": "Emotional Topology",
-            "description": "Terrain 3D des émotions",
+            "description": "Terrain 3D des émotions bibliques",
             "icon": "mountain",
             "color": "#10B981",
-            "ready": False,
+            "ready": True,
         },
         {
             "id": "voice-chamber",

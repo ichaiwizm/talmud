@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import verses, divine_names, stats, constellation, scroll, voice_chamber, gematria
+from api.routes import verses, divine_names, stats, constellation, scroll, voice_chamber, gematria, emotional_topology
 
 app = FastAPI(title="Torah Analysis API", version="1.0.0")
 
@@ -21,6 +21,7 @@ app.include_router(constellation.router, prefix="/api/constellation", tags=["con
 app.include_router(scroll.router, prefix="/api/scroll", tags=["scroll"])
 app.include_router(voice_chamber.router, prefix="/api/voice-chamber", tags=["voice-chamber"])
 app.include_router(gematria.router, prefix="/api/gematria", tags=["gematria"])
+app.include_router(emotional_topology.router, prefix="/api/emotional-topology", tags=["emotional-topology"])
 
 
 @app.get("/api/health")

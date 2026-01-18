@@ -104,3 +104,43 @@ html { scroll-behavior: smooth; }
     linear-gradient(90deg, rgba(212, 168, 83, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* Emotional Topology specific styles */
+.terrain-gradient {
+  background: linear-gradient(180deg,
+    #0f172a 0%,
+    #1e293b 30%,
+    #334155 60%,
+    #475569 100%
+  );
+}
+
+@keyframes terrain-wave {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-2px) scaleY(1.02); }
+}
+.animate-terrain-wave { animation: terrain-wave 4s ease-in-out infinite; }
+
+@keyframes contour-pulse {
+  0%, 100% { opacity: 0.3; stroke-dashoffset: 0; }
+  50% { opacity: 0.6; stroke-dashoffset: 20; }
+}
+.animate-contour-pulse { animation: contour-pulse 3s ease-in-out infinite; }
+
+@keyframes peak-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    transform: scale(1.05);
+  }
+}
+.animate-peak-glow { animation: peak-glow 2s ease-in-out infinite; }
+
+/* Topographic contour lines background */
+.topo-lines {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c13.807 0 25 11.193 25 25S43.807 55 30 55 5 43.807 5 30 16.193 5 30 5z' fill='none' stroke='%2310b981' stroke-width='0.5' opacity='0.1'/%3E%3Cpath d='M30 15c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15 0-8.284 6.716-15 15-15z' fill='none' stroke='%2310b981' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
